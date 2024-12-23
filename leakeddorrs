@@ -15,20 +15,3 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 })
 end
 
-
-AddConnection(UserInputService.InputBegan, function(Input)
-    if Input.KeyCode == Enum.KeyCode.T then
-        -- Hide the UI when T is pressed
-        MainWindow.Visible = false
-        UIHidden = true
-        OrionLib:MakeNotification({
-            Name = "Interface Hidden",
-            Content = "Tap RightShift to reopen the interface",
-            Time = 5
-        })
-        WindowConfig.CloseCallback()
-    elseif Input.KeyCode == Enum.KeyCode.RightShift and UIHidden then
-        -- Reopen the UI when RightShift is pressed
-        MainWindow.Visible = true
-    end
-end)
